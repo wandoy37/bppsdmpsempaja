@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('auth.layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-</head>
+@section('title', 'Dashboard')
 
-<body>
-    <form action="{{ route('logout') }}" id="logout-form" method="POST">
-        @csrf
-    </form>
-    <h1>Dashboard Page</h1>
-    <a href="{{ route('logout') }}"
-        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-</body>
-
-</html>
+@section('content')
+    <div class="page-inner">
+        <div class="page-header">
+            <h4 class="page-title">Dashboard</h4>
+            <ul class="breadcrumbs">
+                <li class="nav-home">
+                    <a href="{{ route('auth.dashboard') }}">
+                        <i class="flaticon-home"></i>
+                    </a>
+                </li>
+                {{-- <li class="separator">
+                    <i class="flaticon-right-arrow"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('dashboard.index') }}">Dashboard</a>
+                </li> --}}
+            </ul>
+        </div>
+    </div>
+@endsection
