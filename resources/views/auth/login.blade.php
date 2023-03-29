@@ -40,7 +40,11 @@
                 <div class="login-form">
                     <div class="form-group">
                         <label for="username" class="placeholder"><b>Username</b></label>
-                        <input id="username" name="username" type="text" class="form-control" required>
+                        <input id="username" name="username" type="text" class="form-control" required
+                            value="{{ old('username') }}">
+                        @error('username')
+                            <span class="text-danger"><b>Login gagal silahkan coba kembali</b></span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="password" class="placeholder"><b>Password</b></label>
@@ -50,6 +54,9 @@
                                 <i class="icon-eye"></i>
                             </div>
                         </div>
+                        @error('password')
+                            <span class="text-danger"><b>Login gagal silahkan coba kembali</b></span>
+                        @enderror
                     </div>
                     <div class="form-group float-right">
                         <button type="submit" class="btn btn-secondary btn-round btn-lg">Sign In</button>
