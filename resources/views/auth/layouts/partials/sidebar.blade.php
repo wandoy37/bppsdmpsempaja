@@ -57,13 +57,13 @@
                         </a>
                     </li>
                 @endif
-                <li class="nav-item {{ request()->segment(2) == 'pengguna' ? 'active' : '' }}">
-                    <a href="">
+                <li class="nav-item {{ request()->segment(2) == 'kategori' ? 'active' : '' }}">
+                    <a href="{{ route('auth.category') }}">
                         <i class="icon-tag"></i>
                         <p>Categories</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->segment(2) == 'pengguna' ? 'active' : '' }}">
+                <li class="nav-item {{ request()->segment(2) == 'postingan' ? 'active' : '' }}">
                     <a href="">
                         <i class="icon-note"></i>
                         <p>Postingan</p>
