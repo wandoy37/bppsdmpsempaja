@@ -44,7 +44,7 @@
                     <h4 class="text-section">NAVIGATION</h4>
                 </li>
                 <li class="nav-item {{ request()->segment(2) == 'dashboard' ? 'active' : '' }}">
-                    <a href="">
+                    <a href="{{ route('auth.dashboard') }}">
                         <i class="fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
@@ -68,6 +68,18 @@
                         <i class="icon-note"></i>
                         <p>Postingan</p>
                     </a>
+                </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">CONFIGURATION</h4>
+                <li class="nav-item {{ request()->segment(2) == 'sosial-media' ? 'active' : '' }}">
+                    <a href="{{ route('auth.social.media') }}">
+                        <i class="icon-globe"></i>
+                        <p>Sosial Media</p>
+                    </a>
+                </li>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}"

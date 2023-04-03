@@ -3,6 +3,7 @@
     use App\Http\Controllers\CategoryController;
     use App\Http\Controllers\DashboardController;
     use App\Http\Controllers\PostController;
+    use App\Http\Controllers\SocialMediaController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -39,4 +40,9 @@
         Route::get('/postingan/{slug}/edit', [PostController::class, 'edit'])->name('auth.post.edit');
         Route::patch('/postingan/{slug}/update', [PostController::class, 'update'])->name('auth.post.update');
         Route::delete('/postingan/{slug}/delete', [PostController::class, 'destroy'])->name('auth.post.delete');
+
+        // Social Media
+        Route::get('/sosial-media', [SocialMediaController::class, 'index'])->name('auth.social.media');
+        Route::get('/sosial-media/{slug}/edit', [SocialMediaController::class, 'edit'])->name('auth.social.media.edit');
+        Route::patch('/sosial-media/{slug}/update', [SocialMediaController::class, 'update'])->name('auth.social.media.update');
     });
