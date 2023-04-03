@@ -49,10 +49,10 @@
                                     @foreach ($categories as $kategori)
                                         <?php $no++; ?>
                                         <tr>
-                                            <th>{{ $no }}</th>
-                                            <th>{{ $kategori->title }}</th>
-                                            <th>{{ $kategori->slug }}</th>
-                                            <th class="form-inline">
+                                            <td>{{ $no }}</td>
+                                            <td>{{ $kategori->title }}</td>
+                                            <td>{{ $kategori->slug }}</td>
+                                            <td class="form-inline">
                                                 <a href="{{ route('auth.category.edit', $kategori->slug) }}"
                                                     class="text-primary">
                                                     <i class="fas fa-pen"></i>
@@ -67,7 +67,7 @@
                                                     onclick="btnDelete( {{ $kategori->id }} )">
                                                     <i class="fas fa-trash"></i>
                                                 </button>
-                                            </th>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
