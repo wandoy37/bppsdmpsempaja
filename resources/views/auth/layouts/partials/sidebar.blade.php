@@ -69,6 +69,12 @@
                         <p>Postingan</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->segment(2) == 'video' ? 'active' : '' }}">
+                    <a href="{{ route('auth.video') }}">
+                        <i class="icon-social-youtube"></i>
+                        <p>Video</p>
+                    </a>
+                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>

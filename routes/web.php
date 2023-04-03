@@ -4,6 +4,7 @@
     use App\Http\Controllers\DashboardController;
     use App\Http\Controllers\PostController;
     use App\Http\Controllers\SocialMediaController;
+    use App\Http\Controllers\VideoController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -45,4 +46,12 @@
         Route::get('/sosial-media', [SocialMediaController::class, 'index'])->name('auth.social.media');
         Route::get('/sosial-media/{slug}/edit', [SocialMediaController::class, 'edit'])->name('auth.social.media.edit');
         Route::patch('/sosial-media/{slug}/update', [SocialMediaController::class, 'update'])->name('auth.social.media.update');
+
+        // Video
+        Route::get('/video', [VideoController::class, 'index'])->name('auth.video');
+        Route::get('/video/tambah', [VideoController::class, 'create'])->name('auth.video.create');
+        Route::post('/video/store', [VideoController::class, 'store'])->name('auth.video.store');
+        Route::get('/video/{slug}/edit', [VideoController::class, 'edit'])->name('auth.video.edit');
+        Route::patch('/video/{slug}/update', [VideoController::class, 'update'])->name('auth.video.update');
+        Route::delete('/video/{slug}/delete', [VideoController::class, 'destroy'])->name('auth.video.delete');
     });
