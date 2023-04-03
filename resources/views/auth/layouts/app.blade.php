@@ -32,6 +32,9 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{{ asset('atlantis/css/demo.css') }}">
+    {{-- Extended --}}
+    <link rel="stylesheet" href="{{ asset('/assets/style.css') }}">
+    @stack('style')
 </head>
 
 <body>

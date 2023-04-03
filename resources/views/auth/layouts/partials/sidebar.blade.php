@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li class="nav-item {{ request()->segment(2) == 'postingan' ? 'active' : '' }}">
-                    <a href="">
+                    <a href="{{ route('auth.post') }}">
                         <i class="icon-note"></i>
                         <p>Postingan</p>
                     </a>

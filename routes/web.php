@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\CategoryController;
     use App\Http\Controllers\DashboardController;
+    use App\Http\Controllers\PostController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -30,4 +31,12 @@
         Route::get('/kategori/{slug}/edit', [CategoryController::class, 'edit'])->name('auth.category.edit');
         Route::patch('/kategori/{slug}/update', [CategoryController::class, 'update'])->name('auth.category.update');
         Route::delete('/kategori/{slug}/delete', [CategoryController::class, 'destroy'])->name('auth.category.delete');
+
+        // Posts
+        Route::get('/postingan', [PostController::class, 'index'])->name('auth.post');
+        Route::get('/postingan/tambah', [PostController::class, 'create'])->name('auth.post.create');
+        Route::post('/postingan/store', [PostController::class, 'store'])->name('auth.post.store');
+        Route::get('/postingan/{slug}/edit', [PostController::class, 'edit'])->name('auth.post.edit');
+        Route::patch('/postingan/{slug}/update', [PostController::class, 'update'])->name('auth.post.update');
+        Route::delete('/postingan/{slug}/delete', [PostController::class, 'destroy'])->name('auth.post.delete');
     });
