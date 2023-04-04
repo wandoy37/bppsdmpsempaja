@@ -6,16 +6,16 @@
                     <img src="{{ asset('atlantis/img/profile.jpg') }}" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
-                    <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <a data-toggle="collapse" href="#" aria-expanded="true">
                         <span class="text-capitalize">
                             {{ Auth::user()->name }}
                             <span class="user-level">{{ Auth::user()->role }}</span>
-                            <span class="caret"></span>
+                            {{-- <span class="caret"></span> --}}
                         </span>
                     </a>
                     <div class="clearfix"></div>
 
-                    <div class="collapse in" id="collapseExample">
+                    {{-- <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
                                 <a href="#profile">
@@ -33,7 +33,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <ul class="nav nav-secondary">
@@ -49,14 +49,6 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                @if (Auth::user()->role == 'admin')
-                    <li class="nav-item {{ request()->segment(2) == 'pengguna' ? 'active' : '' }}">
-                        <a href="{{ route('auth.user') }}">
-                            <i class="icon-people"></i>
-                            <p>Pengguna</p>
-                        </a>
-                    </li>
-                @endif
                 <li class="nav-item {{ request()->segment(2) == 'kategori' ? 'active' : '' }}">
                     <a href="{{ route('auth.category') }}">
                         <i class="icon-tag"></i>
@@ -86,12 +78,20 @@
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
                     <h4 class="text-section">CONFIGURATION</h4>
+                </li>
+                @if (Auth::user()->role == 'admin')
+                    <li class="nav-item {{ request()->segment(2) == 'pengguna' ? 'active' : '' }}">
+                        <a href="{{ route('auth.user') }}">
+                            <i class="icon-people"></i>
+                            <p>Pengguna</p>
+                        </a>
+                    </li>
+                @endif
                 <li class="nav-item {{ request()->segment(2) == 'sosial-media' ? 'active' : '' }}">
                     <a href="{{ route('auth.social.media') }}">
                         <i class="icon-globe"></i>
                         <p>Sosial Media</p>
                     </a>
-                </li>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}"
