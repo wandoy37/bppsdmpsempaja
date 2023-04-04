@@ -5,6 +5,7 @@
     use App\Http\Controllers\DashboardController;
     use App\Http\Controllers\PostController;
     use App\Http\Controllers\SocialMediaController;
+    use App\Http\Controllers\UserController;
     use App\Http\Controllers\VideoController;
     use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,14 @@
     Route::prefix('auth')->middleware('auth')->group(function () {
         // Dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('auth.dashboard');
+
+        // Users
+        Route::get('/pengguna', [UserController::class, 'index'])->name('auth.user');
+        Route::get('/pengguna/create', [UserController::class, 'create'])->name('auth.user.create');
+        Route::post('/pengguna/store', [UserController::class, 'store'])->name('auth.user.store');
+        Route::get('/pengguna/{username}/edit', [UserController::class, 'edit'])->name('auth.user.edit');
+        Route::patch('/pengguna/{username}/update', [UserController::class, 'update'])->name('auth.user.update');
+        Route::delete('/pengguna/{username}/delete', [UserController::class, 'destroy'])->name('auth.user.delete');
 
         // Categories
         Route::get('/kategori', [CategoryController::class, 'index'])->name('auth.category');

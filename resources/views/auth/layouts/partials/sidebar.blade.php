@@ -51,7 +51,7 @@
                 </li>
                 @if (Auth::user()->role == 'admin')
                     <li class="nav-item {{ request()->segment(2) == 'pengguna' ? 'active' : '' }}">
-                        <a href="">
+                        <a href="{{ route('auth.user') }}">
                             <i class="icon-people"></i>
                             <p>Pengguna</p>
                         </a>
