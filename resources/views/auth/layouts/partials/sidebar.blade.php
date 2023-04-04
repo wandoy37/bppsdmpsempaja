@@ -75,6 +75,12 @@
                         <p>Video</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->segment(2) == 'kegiatan' ? 'active' : '' }}">
+                    <a href="{{ route('auth.activity') }}">
+                        <i class="icon-support"></i>
+                        <p>Kegiatan</p>
+                    </a>
+                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>

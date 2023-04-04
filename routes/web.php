@@ -1,5 +1,6 @@
     <?php
 
+    use App\Http\Controllers\ActivityController;
     use App\Http\Controllers\CategoryController;
     use App\Http\Controllers\DashboardController;
     use App\Http\Controllers\PostController;
@@ -54,4 +55,12 @@
         Route::get('/video/{slug}/edit', [VideoController::class, 'edit'])->name('auth.video.edit');
         Route::patch('/video/{slug}/update', [VideoController::class, 'update'])->name('auth.video.update');
         Route::delete('/video/{slug}/delete', [VideoController::class, 'destroy'])->name('auth.video.delete');
+
+        // Activity
+        Route::get('/kegiatan', [ActivityController::class, 'index'])->name('auth.activity');
+        Route::get('/kegiatan/tambah', [ActivityController::class, 'create'])->name('auth.activity.create');
+        Route::post('/kegiatan/store', [ActivityController::class, 'store'])->name('auth.activity.store');
+        Route::get('/kegiatan/{slug}/edit', [ActivityController::class, 'edit'])->name('auth.activity.edit');
+        Route::patch('/kegiatan/{slug}/update', [ActivityController::class, 'update'])->name('auth.activity.update');
+        Route::delete('kegiatan/{slug}/delete', [ActivityController::class, 'destroy'])->name('auth.activity.delete');
     });
