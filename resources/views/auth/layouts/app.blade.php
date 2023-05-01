@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>BAGOPS POLRESTA SAMARINDA - @yield('title')</title>
+    <title>UPTD BPPSDMP - @yield('title')</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/x-icon" />
 
@@ -43,10 +43,10 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="purple2">
 
-                <a href="index.html" class="logo">
+                <a href="#" class="logo">
                     <span class="text-light fw-bold">
                         <img src="{{ asset('assets/img/logo.png') }}" width="25%" alt="">
-                        BAGOPS
+                        <b>BPPSDMP</b>
                     </span>
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
@@ -85,8 +85,8 @@
                 {{-- Section Footer --}}
                 <div class="container-fluid">
                     <div class="copyright ml-auto">
-                        2022, made with <i class="fa fa-heart heart text-danger"></i> by
-                        <span class="text-secondary">Muhammad Riswandi</span>
+                        {{ date('Y') }}, made with <i class="fa fa-heart heart text-danger"></i> by
+                        <span class="text-secondary">UPTD BPPSDMP</span>
                     </div>
                 </div>
                 {{-- /Section Footer --}}

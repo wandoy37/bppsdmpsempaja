@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Login | BAGOPS POLRESTA SAMARINDA</title>
+    <title>Login | UPTD BPPSDMP SEMPAJA</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="icon" href="{{ asset('/assets/img/logo.png') }}" type="image/x-icon" />
 
@@ -34,6 +34,9 @@
 <body class="login">
     <div class="wrapper wrapper-login">
         <div class="container container-login animated fadeIn">
+            <div class="text-center mb-4">
+                <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" width="20%" alt="">
+            </div>
             <h3 class="text-center">Login</h3>
             <form action="{{ route('login') }}" method="post">
                 @csrf
@@ -59,7 +62,7 @@
                         @enderror
                     </div>
                     <div class="form-group float-right">
-                        <button type="submit" class="btn btn-secondary btn-round btn-lg">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-round btn-lg">Masuk</button>
                     </div>
                 </div>
             </form>
