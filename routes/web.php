@@ -4,6 +4,7 @@
     use App\Http\Controllers\CategoryController;
     use App\Http\Controllers\DashboardController;
     use App\Http\Controllers\PostController;
+    use App\Http\Controllers\SitePages;
     use App\Http\Controllers\SocialMediaController;
     use App\Http\Controllers\UserController;
     use App\Http\Controllers\VideoController;
@@ -19,9 +20,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-    Route::get('/', function () {
-        return view('welcome');
+    // Site Pages
+    Route::name('site.')->group(function () {
+        // Beranda
+        Route::get('/', [SitePages::class, 'index'])->name('index');
+        // Berita
+        Route::get('/berita', [SitePages::class, 'berita'])->name('berita');
+        Route::get('/berita/{slug}', [SitePages::class, 'berita_detail'])->name('berita.detail');
+        // Kategori Berita
+        Route::get('/berita/category/{slug}', [SitePages::class, 'berita_category'])->name('berita.category');
     });
 
     Route::prefix('auth')->middleware('auth')->group(function () {
