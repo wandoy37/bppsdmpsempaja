@@ -268,32 +268,23 @@ li a:hover{
 /* ======================================= */
 
 /* Pagination */
-.pagination > li > a
-{
-    background-color: white;
+
+.page-link {
     color: #00A859;
 }
 
-.pagination > li > a:focus,
-.pagination > li > a:hover,
-.pagination > li > span:focus,
-.pagination > li > span:hover
-{
-    color: #ffffff;
+.page-link:hover {
+    z-index: 2;
+    color: #00A859;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
     background-color: #00A859;
     border-color: #00A859;
-}
-
-.pagination > .active > a
-{
-    color: white;
-    background-color: #00A859 !Important;
-    border: solid 1px #00A859 !Important;
-}
-
-.pagination > .active > a:hover
-{
-    background-color: #00A859 !Important;
-    border: solid 1px #00A859;
 }
 /* ======================================= */

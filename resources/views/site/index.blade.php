@@ -7,33 +7,19 @@
     <section>
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('assets') }}/img/carousel-1.jpeg" class="image-carousel-custom" alt="...">
-                    <div class="carousel-caption">
-                        <div class="container mb-4 mt-4">
-                            <p>Some representative placeholder content for the second slide.</p>
-                            <button class="btn-style-1">Selengkapnya</button>
+                @foreach ($beritas as $carousel)
+                    <div class="carousel-item active">
+                        <img src="{{ asset('/uploads/thumbnail/' . $carousel->thumbnail) }}" class="image-carousel-custom"
+                            alt="...">
+                        <div class="carousel-caption">
+                            <div class="container mb-4 mt-4">
+                                <p>{{ $carousel->title }}</p>
+                                <a href="{{ route('site.berita.detail', $carousel->slug) }}"
+                                    class="btn-style-1">Selengkapnya</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('assets') }}/img/carousel-2.jpeg" class="image-carousel-custom" alt="...">
-                    <div class="carousel-caption">
-                        <div class="container mb-4 mt-4">
-                            <p>Some representative placeholder content for the second slide.</p>
-                            <button class="btn-style-1">Selengkapnya</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('assets') }}/img/carousel-3.jpeg" class="image-carousel-custom" alt="...">
-                    <div class="carousel-caption">
-                        <div class="container mb-4 mt-4">
-                            <p>Some representative placeholder content for the second slide.</p>
-                            <button class="btn-style-1">Selengkapnya</button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

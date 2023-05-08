@@ -29,6 +29,12 @@
         Route::get('/berita/{slug}', [SitePages::class, 'berita_detail'])->name('berita.detail');
         // Kategori Berita
         Route::get('/berita/category/{slug}', [SitePages::class, 'berita_category'])->name('berita.category');
+        // Profile/Tentang Kami/About Us
+        Route::get('/tentang-kami', [SitePages::class, 'tentang_kami'])->name('tentang.kami');
+        // Mitra Kerja
+        Route::get('/mitra-kerja', [SitePages::class, 'mitra_kerja'])->name('mitra.kerja');
+        // Kontak
+        Route::get('/kontak', [SitePages::class, 'kontak'])->name('kontak');
     });
 
     Route::prefix('auth')->middleware('auth')->group(function () {

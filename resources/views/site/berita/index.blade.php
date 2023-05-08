@@ -64,6 +64,13 @@
                             <hr>
                         </div>
                     @endforeach
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="d-flex justify-content-center">
+                                {{ $beritas->links('pagination::bootstrap-4') }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="col-side">

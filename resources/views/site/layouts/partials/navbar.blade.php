@@ -18,17 +18,20 @@
                             href="{{ route('site.index') }}">Beranda</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a class="nav-link" href="/bppsdmsempaja/profile.php">Profil</a>
+                        <a class="nav-link {{ request()->segment(1) == 'tentang-kami' ? 'active' : '' }}"
+                            href="{{ route('site.tentang.kami') }}">Tentang Kami</a>
                     </li>
                     <li class="nav-item me-4">
                         <a class="nav-link {{ request()->segment(1) == 'berita' ? 'active' : '' }}"
                             href="{{ route('site.berita') }}">Berita</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a class="nav-link" href="/bppsdmsempaja/mitrakerja.php">Mitra Kerja</a>
+                        <a class="nav-link {{ request()->segment(1) == 'mitra-kerja' ? 'active' : '' }}"
+                            href="{{ route('site.mitra.kerja') }}">Mitra Kerja</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a class="nav-link" href="/bppsdmsempaja/kontak.php">Kontak</a>
+                        <a class="nav-link {{ request()->segment(1) == 'kontak' ? 'active' : '' }}"
+                            href="{{ route('site.kontak') }}">Kontak</a>
                     </li>
                     <form action="/bppsdmsempaja" class="d-flex" role="search">
                         <input class="form-control me-2 input-custom" name="search" type="search"

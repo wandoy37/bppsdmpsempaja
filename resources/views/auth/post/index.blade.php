@@ -52,7 +52,13 @@
                                         <?php $no++; ?>
                                         <tr>
                                             <td>{{ $no }}</td>
-                                            <td>{{ $post->title }}</td>
+                                            <td>
+                                                <small class="text-muted">
+                                                    {{ $post->created_at->isoFormat('DD MMMM Y') }}
+                                                </small>
+                                                <br>
+                                                <span>{{ $post->title }}</span>
+                                            </td>
                                             <td>{{ $post->category->title }}</td>
                                             <td>
                                                 @if ($post->status == 'publish')
