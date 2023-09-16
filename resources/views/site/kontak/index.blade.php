@@ -3,7 +3,7 @@
 @section('title', 'Berita')
 
 @section('content')
-    <section style="padding-top: 5rem;">
+    <section style="padding-top: 5rem; padding-bottom: 10rem;">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">

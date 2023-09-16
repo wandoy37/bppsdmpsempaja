@@ -92,23 +92,7 @@
                         </ol>
 
                         <!-- Social Media -->
-                        <div class="side-title shadow mt-4">
-                            <span>Sosial Media</span>
-                        </div>
-                        <div class="text-center my-3">
-                            <a href="http://" class="text-decoration-none ms-2">
-                                <img src="{{ asset('assets') }}/img/facebook.png" class="img-fluid" alt="">
-                            </a>
-                            <a href="http://" class="text-decoration-none ms-2">
-                                <img src="{{ asset('assets') }}/img/instagram.png" class="img-fluid" alt="">
-                            </a>
-                            <a href="http://" class="text-decoration-none ms-2">
-                                <img src="{{ asset('assets') }}/img/twitter.png" class="img-fluid" alt="">
-                            </a>
-                            <a href="http://" class="text-decoration-none ms-2">
-                                <img src="{{ asset('assets') }}/img/whatsapp.png" class="img-fluid" alt="">
-                            </a>
-                        </div>
+                        @include('site.layouts.partials.social_media')
                     </div>
 
 

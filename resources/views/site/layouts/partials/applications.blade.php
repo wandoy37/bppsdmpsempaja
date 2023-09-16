@@ -7,14 +7,17 @@
                     Pengembangan SDM Pertanian Provinsi Kalimantan Timur - Indonesia</p>
             </div>
             <div class="col-lg-12">
-                <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-radius-20 shadow text-center">
                             <div class="card-body text-center">
-                                <a href="http://" class="text-decoration-none text-dark">
-                                    <h5 class="card-title fw-bold">E-Sertifikat</h5>
-                                    <p class="card-text" style="font-size: 14px;">Lembaga Sertifikasi Pelatihan
-                                        Pengembangan Sumber Daya Manusia Pertanian</p>
+                                <a href="https://sipp.bppsdmsempaja.kaltimprov.go.id/"
+                                    class="text-decoration-none text-dark">
+                                    <h5 class="card-title fw-bold">SIPP</h5>
+                                    <p class="card-text" style="font-size: 14px;">
+                                        Sistem Informasi Penyuluhan dan Teknis
+                                        Pertanian
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -22,10 +25,24 @@
                     <div class="col">
                         <div class="card h-100 border-radius-20 shadow text-center">
                             <div class="card-body text-center">
-                                <a href="http://" class="text-decoration-none text-dark">
-                                    <h5 class="card-title fw-bold">E-Jurnal</h5>
-                                    <p class="card-text" style="font-size: 14px;">Lembaga Akademik Karya Ilmiah
-                                        Pertanian</p>
+                                <a href="https://simpeltan.bppsdmsempaja.kaltimprov.go.id/"
+                                    class="text-decoration-none text-dark">
+                                    <h5 class="card-title fw-bold">SIMPELTAN</h5>
+                                    <p class="card-text" style="font-size: 14px;">Sistem Informasi Penyelenggaraan
+                                        Pelatihan
+                                        Pertanian Berbasis Online</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-radius-20 shadow text-center">
+                            <div class="card-body text-center">
+                                <a href="https://certificate.bppsdmsempaja.kaltimprov.go.id/"
+                                    class="text-decoration-none text-dark">
+                                    <h5 class="card-title fw-bold">SETKON</h5>
+                                    <p class="card-text" style="font-size: 14px;">Sistem Informasi Sertifikat Elektronik
+                                    </p>
                                 </a>
                             </div>
                         </div>
