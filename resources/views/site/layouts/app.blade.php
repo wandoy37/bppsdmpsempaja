@@ -19,10 +19,9 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/5983388006.js" crossorigin="anonymous"></script>
 
-    <!-- This site is optimized with the Yoast SEO plugin v21.1 - https://yoast.com/wordpress/plugins/seo/ -->
+    <!-- This site is optimized SEO -->
     <meta name="description"
         content="UPTD BPPSDMP Sempaja, UPTD BPPSDMP, Unit Pelaksana Teknis Dinas, Penyuluhan dan Pengembangan Sumber Daya Manusia Pertanian" />
-    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="UPTD BPPSDMP" />
     <meta property="og:description"
