@@ -22,6 +22,8 @@
 */
     // Site Pages
     Route::name('site.')->group(function () {
+        // Portal
+        Route::get('/portal', [SitePages::class, 'portal'])->name('portal');
         // Beranda
         Route::get('/', [SitePages::class, 'index'])->name('index');
         // Berita

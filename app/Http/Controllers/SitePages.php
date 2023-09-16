@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class SitePages extends Controller
 {
+    public function portal()
+    {
+        return view('portal.index');
+    }
+
     public function index()
     {
         $beritas = Post::where('status', 'publish')->limit(3)->orderBy('id', 'DESC')->get();
