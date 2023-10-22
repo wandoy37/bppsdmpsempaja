@@ -59,7 +59,7 @@
                                         @error('content')
                                             <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
-                                        <textarea name="content" id="summernote" cols="30" rows="10"></textarea>
+                                        <textarea id="summernote-editor" name="content">{!! old('content') !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -72,7 +72,12 @@
                                         <select name="category" id="kategori" class="form-control">
                                             <option value="">--pilih kategori--</option>
                                             @foreach ($categories as $kategori)
-                                                <option value="{{ $kategori->id }}">{{ $kategori->title }}</option>
+                                                @if (old('category') == $kategori->id)
+                                                    <option value="{{ $kategori->id }}" selected>{{ $kategori->title }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $kategori->id }}">{{ $kategori->title }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
@@ -102,11 +107,57 @@
 @endsection
 @push('scripts')
     <script>
-        $('#summernote').summernote({
-            placeholder: 'Konten...',
-            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
-            tabsize: 2,
-            height: 300
+        $(document).ready(function() {
+
+            // Define function to open filemanager window
+            var lfm = function(options, cb) {
+                var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+                window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager',
+                    'width=900,height=600');
+                window.SetUrl = cb;
+            };
+
+            // Define LFM summernote button
+            var LFMButton = function(context) {
+                var ui = $.summernote.ui;
+                var button = ui.button({
+                    contents: '<i class="note-icon-picture"></i> ',
+                    tooltip: 'Insert image with filemanager',
+                    click: function() {
+
+                        lfm({
+                            type: 'image',
+                            prefix: '/laravel-filemanager'
+                        }, function(lfmItems, path) {
+                            lfmItems.forEach(function(lfmItem) {
+                                context.invoke('insertImage', lfmItem.url);
+                            });
+                        });
+
+                    }
+                });
+                return button.render();
+            };
+
+            // Initialize summernote with LFM button in the popover button group
+            // Please note that you can add this button to any other button group you'd like
+            $('#summernote-editor').summernote({
+                height: 550,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['insert', ['link', 'table', 'hr']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['popovers', ['lfm']],
+                ],
+                buttons: {
+                    lfm: LFMButton
+                }
+            });
         });
     </script>
 @endpush

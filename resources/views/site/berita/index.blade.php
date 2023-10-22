@@ -2,6 +2,11 @@
 
 @section('title', 'Berita')
 
+@push('meta')
+    <meta content="Berita" name="description" />
+    <meta content="UPTD BPPSDMP SEMPAJA" name="keywords" />
+@endpush
+
 @section('content')
     <section>
         <div class="container">

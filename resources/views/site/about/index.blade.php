@@ -2,6 +2,13 @@
 
 @section('title', 'Tentang Kami')
 
+@push('meta')
+    <meta
+        content="UPTD BPPSDMP Sempaja Samarinda Provinsi Kalimantan Timur adalah organisasi pemerintahan yang bergerak pada bidang kegiatan teknis operasional dan pelatihan pertanian."
+        name="description" />
+    <meta content="Tentang Kami - UPTD BPPSDMP SEMPAJA" name="keywords" />
+@endpush
+
 @section('content')
     <section style="padding-top: 5rem;">
         <div class="container">

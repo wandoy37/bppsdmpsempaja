@@ -2,6 +2,14 @@
 
 @section('title', 'Mitra Kerja')
 
+@push('meta')
+    <meta
+        content="Mitra Kerja Unit Pelaksanaan Teknis Dinas (UPTD) Balai Penyuluhan dan Pengembangan
+        Sumber Daya Manusia Pertanian, bekerja sama dengan beberapa organisasi yang bersifat independen
+        maupun non-independen" />
+    <meta content="Mitra Kerja - UPTD BPPSDMP SEMPAJA" name="keywords" />
+@endpush
+
 @section('content')
     <section style="padding-top: 5rem;">
         <div class="container">

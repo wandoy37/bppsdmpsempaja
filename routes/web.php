@@ -88,3 +88,7 @@
         Route::patch('/kegiatan/{slug}/update', [ActivityController::class, 'update'])->name('auth.activity.update');
         Route::delete('kegiatan/{slug}/delete', [ActivityController::class, 'destroy'])->name('auth.activity.delete');
     });
+
+    Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
+    });

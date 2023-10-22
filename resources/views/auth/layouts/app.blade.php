@@ -96,9 +96,11 @@
 
 
     <!--   Core JS Files   -->
-    <script src="{{ asset('atlantis/js/core/jquery.3.2.1.min.js') }}"></script>
+    {{-- <script src="{{ asset('atlantis/js/core/jquery.3.2.1.min.js') }}"></script> --}}
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="{{ asset('atlantis/js/core/popper.min.js') }}"></script>
-    <script src="{{ asset('atlantis/js/core/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('atlantis/js/core/bootstrap.min.js') }}"></script> --}}
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
     <!-- jQuery UI -->
     <script src="{{ asset('atlantis/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>

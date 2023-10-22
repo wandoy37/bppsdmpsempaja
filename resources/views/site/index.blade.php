@@ -2,6 +2,11 @@
 
 @section('title', 'Beranda')
 
+@push('meta')
+    <meta content="UPTD Balai Penyuluhan dan Pengembangan SDM Pertanian" name="description" />
+    <meta content="UPTD BPPSDMP SEMPAJA" name="keywords" />
+@endpush
+
 @section('content')
     <!-- Hero Carousel -->
     <section>

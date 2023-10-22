@@ -2,6 +2,11 @@
 
 @section('title', 'Berita')
 
+@push('meta')
+    <meta content="kontak uptd bppsdmp provinsi kalimantan timur" />
+    <meta content="Kontak - UPTD BPPSDMP SEMPAJA" name="keywords" />
+@endpush
+
 @section('content')
     <section style="padding-top: 5rem; padding-bottom: 10rem;">
         <div class="container">

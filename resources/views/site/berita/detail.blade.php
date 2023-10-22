@@ -2,6 +2,11 @@
 
 @section('title', $berita->title)
 
+@push('meta')
+    <meta content="{{ $berita->title }}" name="description" />
+    <meta content="UPTD BPPSDMP SEMPAJA" name="keywords" />
+@endpush
+
 @section('content')
     <section>
         <div class="container">
