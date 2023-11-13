@@ -96,6 +96,20 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                        <label>Galeri</label>
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <a id="lfm" data-input="galeri" data-preview="holder"
+                                                    class="btn btn-primary text-white">
+                                                    <i class="fa fa-picture-o"></i> OPEN
+                                                </a>
+                                            </span>
+                                            <input id="galeri" class="form-control" type="text" name="filepath"
+                                                placeholder="links">
+                                        </div>
+                                        <img id="holder" style="margin-top:15px;max-height:100px;">
+                                    </div>
+                                    <div class="form-group">
                                         <label>Thumbnail</label>
                                         <br>
                                         @error('category')
@@ -126,41 +140,11 @@
     </div>
 @endsection
 @push('scripts')
+    <script src="{{ asset('vendor') }}/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
+            $('#lfm').filemanager('image');
 
-            // Define function to open filemanager window
-            var lfm = function(options, cb) {
-                var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
-                window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager',
-                    'width=900,height=600');
-                window.SetUrl = cb;
-            };
-
-            // Define LFM summernote button
-            var LFMButton = function(context) {
-                var ui = $.summernote.ui;
-                var button = ui.button({
-                    contents: '<i class="note-icon-picture"></i> ',
-                    tooltip: 'Insert image with filemanager',
-                    click: function() {
-
-                        lfm({
-                            type: 'image',
-                            prefix: '/laravel-filemanager'
-                        }, function(lfmItems, path) {
-                            lfmItems.forEach(function(lfmItem) {
-                                context.invoke('insertImage', lfmItem.url);
-                            });
-                        });
-
-                    }
-                });
-                return button.render();
-            };
-
-            // Initialize summernote with LFM button in the popover button group
-            // Please note that you can add this button to any other button group you'd like
             $('#summernote-editor').summernote({
                 height: 550,
                 toolbar: [
@@ -170,13 +154,10 @@
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['height', ['height']],
-                    ['insert', ['link', 'table', 'hr']],
+                    ['insert', ['link', 'table', 'hr', 'picture', 'video']],
                     ['view', ['fullscreen', 'codeview', 'help']],
                     ['popovers', ['lfm']],
                 ],
-                buttons: {
-                    lfm: LFMButton
-                }
             });
         });
     </script>
