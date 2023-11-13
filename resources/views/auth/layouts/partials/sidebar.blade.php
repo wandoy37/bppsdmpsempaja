@@ -73,6 +73,12 @@
                         <p>Kegiatan</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->segment(2) == 'qrcode' ? 'active' : '' }}">
+                    <a href="{{ route('auth.qrcode') }}">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Generate QrCode</p>
+                    </a>
+                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>

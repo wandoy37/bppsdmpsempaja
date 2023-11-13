@@ -21,7 +21,7 @@
 |
 */
     // Laravel Filemanager
-    Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
 
@@ -48,6 +48,12 @@
     Route::prefix('auth')->middleware('auth')->group(function () {
         // Dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('auth.dashboard');
+
+        // Qrcode Route
+        Route::get('/qrcode', [DashboardController::class, 'qrcode_index'])->name('auth.qrcode');
+        Route::get('/qrcode/create', [DashboardController::class, 'qrcode_create'])->name('auth.qrcode.create');
+        Route::post('/qrcode/store', [DashboardController::class, 'qrcode_store'])->name('auth.qrcode.store');
+        Route::delete('/qrcode/delete/{id}', [DashboardController::class, 'qrcode_destroy'])->name('auth.qrcode.delete');
 
         // Users
         Route::get('/pengguna', [UserController::class, 'index'])->name('auth.user');
