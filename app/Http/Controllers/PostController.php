@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -52,6 +53,7 @@ class PostController extends Controller
                 'content' => 'required',
                 'category' => 'required',
                 'thumbnail' => 'required',
+                'tanggal' => 'required',
             ],
             [
                 'title.required' => 'Judul wajib diisi.',
@@ -95,6 +97,7 @@ class PostController extends Controller
                 'thumbnail' => $imageName,
                 'status' => $request->status,
                 'category_id' => $request->category,
+                'created_at' => Carbon::parse($request->tanggal),
                 'author_id' => Auth::user()->id,
             ]);
 
@@ -147,6 +150,7 @@ class PostController extends Controller
                 'title' => 'required',
                 'content' => 'required',
                 'category' => 'required',
+                'tanggal' => 'required',
             ],
             [
                 'title.required' => 'Judul wajib diisi.',
@@ -197,6 +201,7 @@ class PostController extends Controller
                 'thumbnail' => $imageName ?? $post->thumbnail,
                 'status' => $request->status,
                 'category_id' => $request->category,
+                'created_at' => Carbon::parse($request->tanggal),
                 'author_id' => Auth::user()->id,
             ]);
 

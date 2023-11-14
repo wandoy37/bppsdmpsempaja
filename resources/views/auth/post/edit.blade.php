@@ -96,6 +96,18 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                        <label>Tanggal</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="datepicker" name="tanggal"
+                                                value="{{ old('tanggal', $post->created_at->format('d/m/y')) }}">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Galeri</label>
                                         <div class="input-group">
                                             <span class="input-group-btn">
@@ -143,6 +155,10 @@
     <script src="{{ asset('vendor') }}/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
         $(document).ready(function() {
+            $('#datepicker').datetimepicker({
+                format: 'MM/DD/YYYY',
+            });
+
             $('#lfm').filemanager('image');
 
             $('#summernote-editor').summernote({
