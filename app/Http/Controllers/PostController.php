@@ -83,7 +83,7 @@ class PostController extends Controller
                 $image = $request['thumbnail'];
                 $imageName = Str::slug($request->title, '-') . '-' . date('Y-m-d') . '.' . $image->getClientOriginalExtension();
                 // Resize Image
-                $thumbnail = Image::make($image->getRealPath())->resize(654, 436);
+                $thumbnail = Image::make($image->getRealPath())->resize(1920, 1080);
                 // Save Image
                 $thumbPath = $path . $imageName;
                 $thumbnail = Image::make($thumbnail)->save($thumbPath);
@@ -186,7 +186,7 @@ class PostController extends Controller
                 $image = $request['thumbnail'];
                 $imageName = Str::slug($request->title, '-') . '-' . date('Y-m-d') . '.' . $image->getClientOriginalExtension();
                 // Resize Image
-                $thumbnail = Image::make($image->getRealPath())->resize(654, 436);
+                $thumbnail = Image::make($image->getRealPath())->resize(1920, 1080);
                 // Save Image
                 $thumbPath = $path . $imageName;
                 $thumbnail = Image::make($thumbnail)->save($thumbPath);

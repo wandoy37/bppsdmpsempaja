@@ -93,20 +93,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Galeri</label>
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <a id="lfm" data-input="galeri" data-preview="holder"
-                                                    class="btn btn-primary text-white">
-                                                    <i class="fa fa-picture-o"></i> OPEN
-                                                </a>
-                                            </span>
-                                            <input id="galeri" class="form-control" type="text" name="filepath"
-                                                placeholder="links">
-                                        </div>
-                                        <img id="holder" style="margin-top:15px;max-height:100px;">
-                                    </div>
-                                    <div class="form-group">
                                         <label>Thumbnail</label>
                                         <br>
                                         @error('thumbnail')
@@ -138,8 +124,6 @@
                 format: 'MM/DD/YYYY',
             });
 
-            $('#lfm').filemanager('image');
-
             $('#summernote-editor').summernote({
                 height: 550,
                 toolbar: [
@@ -151,7 +135,6 @@
                     ['height', ['height']],
                     ['insert', ['link', 'table', 'hr', 'picture', 'video']],
                     ['view', ['fullscreen', 'codeview', 'help']],
-                    ['popovers', ['lfm']],
                 ],
             });
         });

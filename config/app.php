@@ -196,7 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        // UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
     ],
